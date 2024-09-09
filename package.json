@@ -1,0 +1,13 @@
+{
+  "name": "aaa",
+  "packageManager": "yarn@4.4.1",
+  "scripts": {
+    "build:all": "yarn workspaces foreach -A run build"
+  },
+  "workspaces": [
+    "packages/**/*"
+  ],
+  "devDependencies": {
+    "turbo": "^2.1.1"
+  }
+}
