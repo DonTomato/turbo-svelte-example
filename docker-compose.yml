@@ -1,11 +1,9 @@
 services:
-  openssh-server:
-    build:
-      context: .
-      args:
-        ROOT_PASSWORD: aaa
-    restart: always
-    ports:
-      - 2222:22
+  deb:
+    image: node:20-bullseye
+    restart: unless-stopped
     volumes:
-      - ./data:/data   # Optional: mount a host directory in the container
+      - ./data:/data
+    command: tail -f /dev/null
+
+# sudo docker exec -it turbo-svelte-example-deb-1 bash
