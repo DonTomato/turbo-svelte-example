@@ -1,0 +1,11 @@
+services:
+  openssh-server:
+    build:
+      context: .
+      args:
+        ROOT_PASSWORD: aaa
+    restart: always
+    ports:
+      - 2222:22
+    volumes:
+      - ./data:/data   # Optional: mount a host directory in the container
